@@ -1,0 +1,22 @@
+{
+  "name": "aaronadal/wordpress-bridge-bundle",
+  "type": "symfony-bundle",
+  "license": "MIT",
+  "description": "Wordpress bridge for Symfony",
+  "authors": [
+    {
+      "name": "Aarón Nadal",
+      "email": "aaronadal.dev@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.1.0",
+    "symfony/framework-bundle": "^2.8|^3.0|^4.0",
+    "doctrine/orm": "^2.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "Aaronadal\\WordpressBridgeBundle\\": "src/"
+    }
+  }
+}

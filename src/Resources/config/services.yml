@@ -1,0 +1,7 @@
+services:
+    aaronadal.wp.table_prefix.subscriber:
+        class: Aaronadal\WordpressBridgeBundle\Persistence\Subscriber\TablePrefixSubscriber
+        arguments:
+            - '%aaronadal.wp.table_prefix%'
+        tags:
+            - { name: doctrine.event_subscriber }
