@@ -4,7 +4,7 @@ namespace Aaronadal\WordpressBridgeBundle\Entity;
 
 
 use Aaronadal\WordpressBridgeBundle\Persistence\Annotation\WordpressTable;
-use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -37,9 +37,9 @@ class User extends AbstractUser
     /**
      * Gets the Posts.
      *
-     * @return AbstractPost[]|ArrayCollection
+     * @return AbstractPost[]|Collection
      */
-    public function getPosts(): ArrayCollection
+    public function getPosts(): Collection
     {
         return $this->posts;
     }
@@ -47,9 +47,9 @@ class User extends AbstractUser
     /**
      * Gets the Comments.
      *
-     * @return AbstractComment[]|ArrayCollection
+     * @return AbstractComment[]|Collection
      */
-    public function getComments(): ArrayCollection
+    public function getComments(): Collection
     {
         return $this->comments;
     }
@@ -57,9 +57,9 @@ class User extends AbstractUser
     /**
      * Gets the Metas.
      *
-     * @return AbstractUserMeta[]|ArrayCollection
+     * @return AbstractUserMeta[]|Collection
      */
-    public function getMetas(): ArrayCollection
+    public function getMetas(): Collection
     {
         return $this->metas;
     }

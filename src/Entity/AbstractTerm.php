@@ -3,7 +3,7 @@
 namespace Aaronadal\WordpressBridgeBundle\Entity;
 
 
-use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -118,7 +118,7 @@ abstract class AbstractTerm
     /**
      * Gets the TermMetas.
      *
-     * @return ArrayCollection|AbstractTermMeta[]
+     * @return Collection|AbstractTermMeta[]
      */
-    public abstract function getMetas(): ArrayCollection;
+    public abstract function getMetas(): Collection;
 }

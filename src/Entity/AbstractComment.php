@@ -4,7 +4,7 @@ namespace Aaronadal\WordpressBridgeBundle\Entity;
 
 
 use DateTime;
-use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -329,9 +329,9 @@ abstract class AbstractComment
     public abstract function getChild(): ?Comment;
 
     /**
-     * @return ArrayCollection|AbstractCommentMeta[]
+     * @return Collection|AbstractCommentMeta[]
      */
-    public abstract function getMetas(): ArrayCollection;
+    public abstract function getMetas(): Collection;
 
     /**
      * Gets the Post.

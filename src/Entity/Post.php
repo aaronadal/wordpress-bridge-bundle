@@ -4,7 +4,7 @@ namespace Aaronadal\WordpressBridgeBundle\Entity;
 
 
 use Aaronadal\WordpressBridgeBundle\Persistence\Annotation\WordpressTable;
-use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -64,7 +64,7 @@ class Post extends AbstractPost
     /**
      * {@inheritdoc}
      */
-    public function getComments(): ArrayCollection
+    public function getComments(): Collection
     {
         return $this->comments;
     }
@@ -72,7 +72,7 @@ class Post extends AbstractPost
     /**
      * {@inheritdoc}
      */
-    public function setComments(ArrayCollection $comments)
+    public function setComments(Collection $comments)
     {
         $this->comments = $comments;
     }
@@ -112,7 +112,7 @@ class Post extends AbstractPost
     /**
      * {@inheritdoc}
      */
-    public function getChildren(): ArrayCollection
+    public function getChildren(): Collection
     {
         return $this->children;
     }
@@ -120,7 +120,7 @@ class Post extends AbstractPost
     /**
      * {@inheritdoc}
      */
-    public function getMetas(): ArrayCollection
+    public function getMetas(): Collection
     {
         return $this->metas;
     }
@@ -128,7 +128,7 @@ class Post extends AbstractPost
     /**
      * {@inheritdoc}
      */
-    public function setMetas(ArrayCollection $metas)
+    public function setMetas(Collection $metas)
     {
         $this->metas = $metas;
     }
@@ -136,7 +136,7 @@ class Post extends AbstractPost
     /**
      * {@inheritdoc}
      */
-    public function getTaxonomies(): ArrayCollection
+    public function getTaxonomies(): Collection
     {
         return $this->taxonomies;
     }
@@ -144,7 +144,7 @@ class Post extends AbstractPost
     /**
      * {@inheritdoc}
      */
-    public function setTaxonomies(ArrayCollection $taxonomies)
+    public function setTaxonomies(Collection $taxonomies)
     {
         $this->taxonomies = $taxonomies;
     }

@@ -3,7 +3,7 @@
 namespace Aaronadal\WordpressBridgeBundle\Entity;
 
 
-use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -125,9 +125,9 @@ abstract class AbstractTaxonomy
     /**
      * Gets the Children.
      *
-     * @return AbstractTaxonomy[]|ArrayCollection
+     * @return AbstractTaxonomy[]|Collection
      */
-    public abstract function getChildren(): ArrayCollection;
+    public abstract function getChildren(): Collection;
 
     /**
      * Gets the Term.
@@ -146,14 +146,14 @@ abstract class AbstractTaxonomy
     /**
      * Gets the Posts.
      *
-     * @return AbstractPost[]|ArrayCollection
+     * @return AbstractPost[]|Collection
      */
-    public abstract function getPosts(): ArrayCollection;
+    public abstract function getPosts(): Collection;
 
     /**
      * Sets the Posts.
      *
-     * @param AbstractPost[]|ArrayCollection $posts
+     * @param AbstractPost[]|Collection $posts
      */
-    public abstract function setPosts(ArrayCollection $posts);
+    public abstract function setPosts(Collection $posts);
 }

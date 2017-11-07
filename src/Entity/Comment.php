@@ -4,7 +4,7 @@ namespace Aaronadal\WordpressBridgeBundle\Entity;
 
 
 use Aaronadal\WordpressBridgeBundle\Persistence\Annotation\WordpressTable;
-use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -62,7 +62,7 @@ class Comment extends AbstractComment
     /**
      * {@inheritdoc}
      */
-    public function getMetas(): ArrayCollection
+    public function getMetas(): Collection
     {
         return $this->metas;
     }

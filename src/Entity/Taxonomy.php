@@ -4,7 +4,7 @@ namespace Aaronadal\WordpressBridgeBundle\Entity;
 
 
 use Aaronadal\WordpressBridgeBundle\Persistence\Annotation\WordpressTable;
-use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -62,7 +62,7 @@ class Taxonomy extends AbstractTaxonomy
     /**
      * {@inheritdoc}
      */
-    public function getChildren(): ArrayCollection
+    public function getChildren(): Collection
     {
         return $this->children;
     }
@@ -86,7 +86,7 @@ class Taxonomy extends AbstractTaxonomy
     /**
      * {@inheritdoc}
      */
-    public function getPosts(): ArrayCollection
+    public function getPosts(): Collection
     {
         return $this->posts;
     }
@@ -94,7 +94,7 @@ class Taxonomy extends AbstractTaxonomy
     /**
      * {@inheritdoc}
      */
-    public function setPosts(ArrayCollection $posts)
+    public function setPosts(Collection $posts)
     {
         $this->posts = $posts;
     }

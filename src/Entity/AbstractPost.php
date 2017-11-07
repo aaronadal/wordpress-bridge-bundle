@@ -4,7 +4,7 @@ namespace Aaronadal\WordpressBridgeBundle\Entity;
 
 
 use DateTime;
-use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -537,16 +537,16 @@ abstract class AbstractPost
     /**
      * Gets the Comments.
      *
-     * @return ArrayCollection|AbstractComment[]
+     * @return Collection|AbstractComment[]
      */
-    public abstract function getComments(): ArrayCollection;
+    public abstract function getComments(): Collection;
 
     /**
      * Sets the Comments.
      *
-     * @param ArrayCollection|AbstractComment[] $comments
+     * @param Collection|AbstractComment[] $comments
      */
-    public abstract function setComments(ArrayCollection $comments);
+    public abstract function setComments(Collection $comments);
 
     /**
      * Gets the Author.
@@ -579,35 +579,35 @@ abstract class AbstractPost
     /**
      * Gets the Children.
      *
-     * @return ArrayCollection|AbstractPost[]
+     * @return Collection|AbstractPost[]
      */
-    public abstract function getChildren(): ArrayCollection;
+    public abstract function getChildren(): Collection;
 
     /**
      * Gets the Metas.
      *
-     * @return ArrayCollection|AbstractPostMeta[]
+     * @return Collection|AbstractPostMeta[]
      */
-    public abstract function getMetas(): ArrayCollection;
+    public abstract function getMetas(): Collection;
 
     /**
      * Sets the Metas.
      *
-     * @param ArrayCollection|AbstractPostMeta[] $metas
+     * @param Collection|AbstractPostMeta[] $metas
      */
-    public abstract function setMetas(ArrayCollection $metas);
+    public abstract function setMetas(Collection $metas);
 
     /**
      * Gets the Taxonomies.
      *
-     * @return ArrayCollection|AbstractTaxonomy[]
+     * @return Collection|AbstractTaxonomy[]
      */
-    public abstract function getTaxonomies(): ArrayCollection;
+    public abstract function getTaxonomies(): Collection;
 
     /**
      * Sets the Taxonomies.
      *
-     * @param ArrayCollection|AbstractTaxonomy[] $taxonomies
+     * @param Collection|AbstractTaxonomy[] $taxonomies
      */
-    public abstract function setTaxonomies(ArrayCollection $taxonomies);
+    public abstract function setTaxonomies(Collection $taxonomies);
 }
