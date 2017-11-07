@@ -21,7 +21,7 @@ class TermMeta extends AbstractTermMeta
     /**
      * @ORM\ManyToOne(targetEntity="Term", inversedBy="metas")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="term_id", referencedColumnName="ID")
+     *   @ORM\JoinColumn(name="term_id", referencedColumnName="term_id")
      * })
      */
     private $term;
