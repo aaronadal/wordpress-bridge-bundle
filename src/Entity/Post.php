@@ -128,14 +128,6 @@ class Post extends AbstractPost
     /**
      * {@inheritdoc}
      */
-    public function setMetas(Collection $metas)
-    {
-        $this->metas = $metas;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
     public function getTaxonomies(): Collection
     {
         return $this->taxonomies;

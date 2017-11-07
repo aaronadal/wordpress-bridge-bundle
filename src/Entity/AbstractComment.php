@@ -334,6 +334,24 @@ abstract class AbstractComment
     public abstract function getMetas(): Collection;
 
     /**
+     * Gets one Meta by key.
+     *
+     * @param $key
+     *
+     * @return AbstractCommentMeta|null
+     */
+    public function getMeta($key)
+    {
+        foreach ($this->getMetas() as $meta) {
+            if($meta->getKey() === $key) {
+                return $meta;
+            }
+        }
+
+        return null;
+    }
+
+    /**
      * Gets the Post.
      *
      * @return AbstractPost

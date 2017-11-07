@@ -591,11 +591,22 @@ abstract class AbstractPost
     public abstract function getMetas(): Collection;
 
     /**
-     * Sets the Metas.
+     * Gets one Meta by key.
      *
-     * @param Collection|AbstractPostMeta[] $metas
+     * @param $key
+     *
+     * @return AbstractPostMeta|null
      */
-    public abstract function setMetas(Collection $metas);
+    public function getMeta($key)
+    {
+        foreach ($this->getMetas() as $meta) {
+            if($meta->getKey() === $key) {
+                return $meta;
+            }
+        }
+
+        return null;
+    }
 
     /**
      * Gets the Taxonomies.

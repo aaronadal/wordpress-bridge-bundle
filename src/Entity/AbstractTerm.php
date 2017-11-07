@@ -121,4 +121,22 @@ abstract class AbstractTerm
      * @return Collection|AbstractTermMeta[]
      */
     public abstract function getMetas(): Collection;
+
+    /**
+     * Gets one Meta by key.
+     *
+     * @param $key
+     *
+     * @return AbstractTermMeta|null
+     */
+    public function getMeta($key)
+    {
+        foreach ($this->getMetas() as $meta) {
+            if($meta->getKey() === $key) {
+                return $meta;
+            }
+        }
+
+        return null;
+    }
 }

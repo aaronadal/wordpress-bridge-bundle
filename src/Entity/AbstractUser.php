@@ -258,4 +258,43 @@ abstract class AbstractUser
     {
         $this->displayName = $displayName;
     }
+
+    /**
+     * Gets the Posts.
+     *
+     * @return AbstractPost[]|Collection
+     */
+    public abstract function getPosts();
+
+    /**
+     * Gets the Comments.
+     *
+     * @return AbstractComment[]|Collection
+     */
+    public abstract function getComments();
+
+    /**
+     * Gets the Metas.
+     *
+     * @return AbstractUserMeta[]|Collection
+     */
+    public abstract function getMetas();
+
+    /**
+     * Gets one Meta by key.
+     *
+     * @param $key
+     *
+     * @return AbstractUserMeta|null
+     */
+    public function getMeta($key)
+    {
+        foreach ($this->getMetas() as $meta) {
+            if($meta->getKey() === $key) {
+                return $meta;
+            }
+        }
+
+        return null;
+    }
 }

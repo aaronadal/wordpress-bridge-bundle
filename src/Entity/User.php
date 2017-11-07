@@ -35,9 +35,7 @@ class User extends AbstractUser
     private $metas;
 
     /**
-     * Gets the Posts.
-     *
-     * @return AbstractPost[]|Collection
+     * {@inheritdoc}
      */
     public function getPosts(): Collection
     {
@@ -45,9 +43,7 @@ class User extends AbstractUser
     }
 
     /**
-     * Gets the Comments.
-     *
-     * @return AbstractComment[]|Collection
+     * {@inheritdoc}
      */
     public function getComments(): Collection
     {
@@ -55,9 +51,7 @@ class User extends AbstractUser
     }
 
     /**
-     * Gets the Metas.
-     *
-     * @return AbstractUserMeta[]|Collection
+     * {@inheritdoc}
      */
     public function getMetas(): Collection
     {
