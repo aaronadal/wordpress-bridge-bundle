@@ -3,6 +3,7 @@
 namespace Aaronadal\WordpressBridgeBundle;
 
 
+use Aaronadal\WordpressBridgeBundle\DependencyInjection\ShortcodeCompilerPass;
 use Aaronadal\WordpressBridgeBundle\Persistence\CompilerPass\PreventMetadataPass;
 use Aaronadal\WordpressBridgeBundle\Persistence\Types\WordpressIdType;
 use Aaronadal\WordpressBridgeBundle\Persistence\Types\WordpressSerializedType;
@@ -36,5 +37,6 @@ class AaronadalWordpressBridgeBundle extends Bundle
         parent::build($container);
 
         $container->addCompilerPass(new PreventMetadataPass());
+        $container->addCompilerPass(new ShortcodeCompilerPass());
     }
 }
