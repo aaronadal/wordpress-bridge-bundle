@@ -30,17 +30,17 @@ abstract class AbstractComment
     private $author;
 
     /**
-     * @ORM\Column(name="comment_email", type="string", length=100, nullable=false)
+     * @ORM\Column(name="comment_author_email", type="string", length=100, nullable=false)
      */
     private $email;
 
     /**
-     * @ORM\Column(name="comment_url", type="string", length=200, nullable=false)
+     * @ORM\Column(name="comment_author_url", type="string", length=200, nullable=false)
      */
     private $url;
 
     /**
-     * @ORM\Column(name="comment_IP", type="string", length=100, nullable=false)
+     * @ORM\Column(name="comment_author_IP", type="string", length=100, nullable=false)
      */
     private $ip;
 
