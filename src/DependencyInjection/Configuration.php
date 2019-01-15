@@ -19,8 +19,14 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder();
-        $rootNode    = $treeBuilder->root('aaronadal_wordpress_bridge');
+        if(method_exists(TreeBuilder::class, 'getRootNode')) {
+            $treeBuilder = new TreeBuilder('aaronadal_wordpress_bridge');
+            $rootNode    = $treeBuilder->getRootNode();
+        }
+        else {
+            $treeBuilder = new TreeBuilder();
+            $rootNode    = $treeBuilder->root('aaronadal_wordpress_bridge');
+        }
 
         $rootNode->children()
             ->arrayNode('entity_namespaces')
