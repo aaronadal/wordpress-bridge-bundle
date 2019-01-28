@@ -32,6 +32,7 @@ class WordpressSerializedType extends TextType
     public function convertToPHPValue($value, AbstractPlatform $platform)
     {
         if($this->isSerialized($value)) {
+            $value = str_replace("\\", "", $value);
             $value = unserialize($value);
         }
 
