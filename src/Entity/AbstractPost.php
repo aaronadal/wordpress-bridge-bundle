@@ -4,6 +4,7 @@ namespace Aaronadal\WordpressBridgeBundle\Entity;
 
 
 use DateTime;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -611,9 +612,11 @@ abstract class AbstractPost
     /**
      * Gets the Taxonomies.
      *
+     * @param string|null $taxonomy If not null, returns only the Taxonomies which matches this parameter.
+     *
      * @return Collection|AbstractTaxonomy[]
      */
-    public abstract function getTaxonomies(): Collection;
+    public abstract function getTaxonomies(?string $taxonomy = null): Collection;
 
     /**
      * Sets the Taxonomies.
@@ -621,4 +624,21 @@ abstract class AbstractPost
      * @param Collection|AbstractTaxonomy[] $taxonomies
      */
     public abstract function setTaxonomies(Collection $taxonomies);
+
+    /**
+     * Gets the Taxonomies.
+     *
+     * @param string|null $taxonomy If not null, returns only the Terms with Taxonomy which matches this parameter.
+     *
+     * @return Collection|AbstractTaxonomy[]
+     */
+    public function getTerms(?string $taxonomy = null): Collection
+    {
+        $collection = new ArrayCollection();
+        foreach($this->getTaxonomies($taxonomy) as $key => $tax) {
+            $collection[$key] = $tax->getTerm();
+        }
+
+        return $collection;
+    }
 }

@@ -4,6 +4,7 @@ namespace Aaronadal\WordpressBridgeBundle\Entity;
 
 
 use Aaronadal\WordpressBridgeBundle\Persistence\Annotation\WordpressTable;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -20,11 +21,15 @@ class Post extends AbstractPost
 {
 
     /**
+     * @var Collection|Comment[]
+     *
      * @ORM\OneToMany(targetEntity="Comment", mappedBy="post", cascade={"all"})
      */
     private $comments;
 
     /**
+     * @var User|null
+     *
      * @ORM\ManyToOne(targetEntity="User", inversedBy="posts")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="post_author", referencedColumnName="ID")
@@ -33,22 +38,30 @@ class Post extends AbstractPost
     private $author;
 
     /**
+     * @var Post|null
+     *
      * @ORM\ManyToOne(targetEntity="Post", inversedBy="children")
      * @ORM\JoinColumn(name="post_parent", referencedColumnName="ID")
      */
     private $parent;
 
     /**
+     * @var Collection|Post[]
+     *
      * @ORM\OneToMany(targetEntity="Post", mappedBy="parent")
      */
     private $children;
 
     /**
+     * @var Collection|PostMeta[]
+     *
      * @ORM\OneToMany(targetEntity="PostMeta", mappedBy="post", indexBy="key", cascade={"all"})
      */
     private $metas;
 
     /**
+     * @var Collection|Taxonomy[]
+     *
      * @ORM\ManyToMany(targetEntity="Taxonomy", inversedBy="posts")
      * @ORM\JoinTable(name="term_relationships",
      *   joinColumns={
@@ -63,6 +76,8 @@ class Post extends AbstractPost
 
     /**
      * {@inheritdoc}
+     *
+     * @return Collection|Comment[]
      */
     public function getComments(): Collection
     {
@@ -79,6 +94,8 @@ class Post extends AbstractPost
 
     /**
      * {@inheritdoc}
+     *
+     * @return Post|null
      */
     public function getAuthor(): AbstractUser
     {
@@ -95,6 +112,8 @@ class Post extends AbstractPost
 
     /**
      * {@inheritdoc}
+     *
+     * @return Post|null
      */
     public function getParent(): AbstractPost
     {
@@ -111,6 +130,8 @@ class Post extends AbstractPost
 
     /**
      * {@inheritdoc}
+     *
+     * @return Collection|Post[]
      */
     public function getChildren(): Collection
     {
@@ -119,6 +140,8 @@ class Post extends AbstractPost
 
     /**
      * {@inheritdoc}
+     *
+     * @return Collection|PostMeta[]
      */
     public function getMetas(): Collection
     {
@@ -127,10 +150,19 @@ class Post extends AbstractPost
 
     /**
      * {@inheritdoc}
+     *
+     * @return Collection|Taxonomy[]
      */
-    public function getTaxonomies(): Collection
+    public function getTaxonomies(?string $taxonomy = null): Collection
     {
-        return $this->taxonomies;
+        $collection = new ArrayCollection();
+        foreach($this->taxonomies as $key => $tax) {
+            if($tax->getName() === $taxonomy) {
+                $collection[$key] = $tax;
+            }
+        }
+
+        return $collection;
     }
 
     /**

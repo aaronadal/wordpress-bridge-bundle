@@ -69,6 +69,16 @@ abstract class AbstractTerm
     }
 
     /**
+     * Gets the Taxonomy Description.
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->getTaxonomy()->getDescription();
+    }
+
+    /**
      * Gets the Slug.
      *
      * @return string
