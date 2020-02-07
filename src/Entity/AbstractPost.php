@@ -568,14 +568,14 @@ abstract class AbstractPost
      *
      * @return AbstractPost|null
      */
-    public abstract function getParent(): AbstractPost;
+    public abstract function getParent(): ?AbstractPost;
 
     /**
      * Sets the Parent.
      *
      * @param AbstractPost|null $parent
      */
-    public abstract function setParent(AbstractPost $parent = null);
+    public abstract function setParent(?AbstractPost $parent = null);
 
     /**
      * Gets the Children.
@@ -598,7 +598,7 @@ abstract class AbstractPost
      *
      * @return AbstractPostMeta|null
      */
-    public function getMeta($key)
+    public function getMeta($key): ?AbstractPostMeta
     {
         foreach ($this->getMetas() as $meta) {
             if($meta->getKey() === $key) {

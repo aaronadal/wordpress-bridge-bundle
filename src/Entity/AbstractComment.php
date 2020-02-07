@@ -321,7 +321,7 @@ abstract class AbstractComment
      *
      * @param AbstractComment $parent
      */
-    public abstract function setParent(AbstractComment $parent);
+    public abstract function setParent(?AbstractComment $parent);
 
     /**
      * @return Comment|null
@@ -340,7 +340,7 @@ abstract class AbstractComment
      *
      * @return AbstractCommentMeta|null
      */
-    public function getMeta($key)
+    public function getMeta($key): ?AbstractCommentMeta
     {
         foreach ($this->getMetas() as $meta) {
             if($meta->getKey() === $key) {
@@ -377,5 +377,5 @@ abstract class AbstractComment
      *
      * @param AbstractUser $user
      */
-    public abstract function setUser(AbstractUser $user);
+    public abstract function setUser(?AbstractUser $user);
 }

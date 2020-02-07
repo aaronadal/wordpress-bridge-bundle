@@ -139,7 +139,7 @@ abstract class AbstractTerm
      *
      * @return AbstractTermMeta|null
      */
-    public function getMeta($key)
+    public function getMeta($key): ?AbstractTermMeta
     {
         foreach ($this->getMetas() as $meta) {
             if($meta->getKey() === $key) {

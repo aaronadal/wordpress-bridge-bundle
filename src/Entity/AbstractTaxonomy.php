@@ -120,7 +120,7 @@ abstract class AbstractTaxonomy
      *
      * @param AbstractTaxonomy|null $parent
      */
-    public abstract function setParent(AbstractTaxonomy $parent = null);
+    public abstract function setParent(?AbstractTaxonomy $parent);
 
     /**
      * Gets the Children.

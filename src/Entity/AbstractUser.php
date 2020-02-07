@@ -264,21 +264,21 @@ abstract class AbstractUser
      *
      * @return AbstractPost[]|Collection
      */
-    public abstract function getPosts();
+    public abstract function getPosts(): Collection;
 
     /**
      * Gets the Comments.
      *
      * @return AbstractComment[]|Collection
      */
-    public abstract function getComments();
+    public abstract function getComments(): Collection;
 
     /**
      * Gets the Metas.
      *
      * @return AbstractUserMeta[]|Collection
      */
-    public abstract function getMetas();
+    public abstract function getMetas(): Collection;
 
     /**
      * Gets one Meta by key.
@@ -287,7 +287,7 @@ abstract class AbstractUser
      *
      * @return AbstractUserMeta|null
      */
-    public function getMeta($key)
+    public function getMeta($key): ?AbstractUserMeta
     {
         foreach ($this->getMetas() as $meta) {
             if($meta->getKey() === $key) {
