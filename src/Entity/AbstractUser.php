@@ -65,7 +65,7 @@ abstract class AbstractUser
     private $status = 0;
 
     /**
-     * @ORM\Column(name="user_display_name", type="string", length=250, nullable=false)
+     * @ORM\Column(name="display_name", type="string", length=250, nullable=false)
      */
     private $displayName;
 
