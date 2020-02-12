@@ -78,7 +78,7 @@ class Comment extends AbstractComment
     /**
      * {@inheritdoc}
      */
-    public function setParent(AbstractComment $parent)
+    public function setParent(AbstractComment $parent): void
     {
         $this->parent = $parent;
     }
@@ -94,7 +94,7 @@ class Comment extends AbstractComment
     /**
      * {@inheritdoc}
      */
-    public function setPost(AbstractPost $post)
+    public function setPost(AbstractPost $post): void
     {
         $this->post = $post;
     }
@@ -110,7 +110,7 @@ class Comment extends AbstractComment
     /**
      * {@inheritdoc}
      */
-    public function setUser(AbstractUser $user)
+    public function setUser(?AbstractUser $user): void
     {
         $this->user = $user;
     }

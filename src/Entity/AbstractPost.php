@@ -150,7 +150,7 @@ abstract class AbstractPost
      *
      * @param DateTime $date
      */
-    public function setDate(DateTime $date)
+    public function setDate(DateTime $date): void
     {
         $this->date = $date;
     }
@@ -170,7 +170,7 @@ abstract class AbstractPost
      *
      * @param DateTime $dateGmt
      */
-    public function setDateGmt(DateTime $dateGmt)
+    public function setDateGmt(DateTime $dateGmt): void
     {
         $this->dateGmt = $dateGmt;
     }
@@ -190,7 +190,7 @@ abstract class AbstractPost
      *
      * @param string $content
      */
-    public function setContent(string $content)
+    public function setContent(string $content): void
     {
         $this->content = $content;
     }
@@ -210,7 +210,7 @@ abstract class AbstractPost
      *
      * @param string $title
      */
-    public function setTitle(string $title)
+    public function setTitle(string $title): void
     {
         $this->title = $title;
     }
@@ -230,7 +230,7 @@ abstract class AbstractPost
      *
      * @param string $excerpt
      */
-    public function setExcerpt(string $excerpt)
+    public function setExcerpt(string $excerpt): void
     {
         $this->excerpt = $excerpt;
     }
@@ -250,7 +250,7 @@ abstract class AbstractPost
      *
      * @param string $status
      */
-    public function setStatus(string $status)
+    public function setStatus(string $status): void
     {
         $this->status = $status;
     }
@@ -270,7 +270,7 @@ abstract class AbstractPost
      *
      * @param string $commentStatus
      */
-    public function setCommentStatus(string $commentStatus)
+    public function setCommentStatus(string $commentStatus): void
     {
         $this->commentStatus = $commentStatus;
     }
@@ -290,7 +290,7 @@ abstract class AbstractPost
      *
      * @param string $pingStatus
      */
-    public function setPingStatus(string $pingStatus)
+    public function setPingStatus(string $pingStatus): void
     {
         $this->pingStatus = $pingStatus;
     }
@@ -310,7 +310,7 @@ abstract class AbstractPost
      *
      * @param string $password
      */
-    public function setPassword(string $password)
+    public function setPassword(string $password): void
     {
         $this->password = $password;
     }
@@ -330,7 +330,7 @@ abstract class AbstractPost
      *
      * @param string $slug
      */
-    public function setSlug(string $slug)
+    public function setSlug(string $slug): void
     {
         $this->slug = $slug;
     }
@@ -350,7 +350,7 @@ abstract class AbstractPost
      *
      * @param string $toPing
      */
-    public function setToPing(string $toPing)
+    public function setToPing(string $toPing): void
     {
         $this->toPing = $toPing;
     }
@@ -370,7 +370,7 @@ abstract class AbstractPost
      *
      * @param string $pinged
      */
-    public function setPinged(string $pinged)
+    public function setPinged(string $pinged): void
     {
         $this->pinged = $pinged;
     }
@@ -390,7 +390,7 @@ abstract class AbstractPost
      *
      * @param DateTime $modifiedDate
      */
-    public function setModifiedDate(DateTime $modifiedDate)
+    public function setModifiedDate(DateTime $modifiedDate): void
     {
         $this->modifiedDate = $modifiedDate;
     }
@@ -410,7 +410,7 @@ abstract class AbstractPost
      *
      * @param DateTime $modifiedDateGmt
      */
-    public function setModifiedDateGmt(DateTime $modifiedDateGmt)
+    public function setModifiedDateGmt(DateTime $modifiedDateGmt): void
     {
         $this->modifiedDateGmt = $modifiedDateGmt;
     }
@@ -430,7 +430,7 @@ abstract class AbstractPost
      *
      * @param string $contentFiltered
      */
-    public function setContentFiltered(string $contentFiltered)
+    public function setContentFiltered(string $contentFiltered): void
     {
         $this->contentFiltered = $contentFiltered;
     }
@@ -450,7 +450,7 @@ abstract class AbstractPost
      *
      * @param string $guid
      */
-    public function setGuid(string $guid)
+    public function setGuid(string $guid): void
     {
         $this->guid = $guid;
     }
@@ -470,7 +470,7 @@ abstract class AbstractPost
      *
      * @param int $weight
      */
-    public function setWeight(int $weight)
+    public function setWeight(int $weight): void
     {
         $this->weight = $weight;
     }
@@ -490,7 +490,7 @@ abstract class AbstractPost
      *
      * @param string $type
      */
-    public function setType(string $type)
+    public function setType(string $type): void
     {
         $this->type = $type;
     }
@@ -510,7 +510,7 @@ abstract class AbstractPost
      *
      * @param string $mimeType
      */
-    public function setMimeType(string $mimeType)
+    public function setMimeType(string $mimeType): void
     {
         $this->mimeType = $mimeType;
     }
@@ -530,7 +530,7 @@ abstract class AbstractPost
      *
      * @param int $commentCount
      */
-    public function setCommentCount(int $commentCount)
+    public function setCommentCount(int $commentCount): void
     {
         $this->commentCount = $commentCount;
     }
@@ -547,7 +547,7 @@ abstract class AbstractPost
      *
      * @param Collection|AbstractComment[] $comments
      */
-    public abstract function setComments(Collection $comments);
+    public abstract function setComments(Collection $comments): void;
 
     /**
      * Gets the Author.
@@ -561,21 +561,21 @@ abstract class AbstractPost
      *
      * @param AbstractUser $author
      */
-    public abstract function setAuthor(AbstractUser $author);
+    public abstract function setAuthor(AbstractUser $author): void;
 
     /**
      * Gets the Parent.
      *
      * @return AbstractPost|null
      */
-    public abstract function getParent(): AbstractPost;
+    public abstract function getParent(): ?AbstractPost;
 
     /**
      * Sets the Parent.
      *
      * @param AbstractPost|null $parent
      */
-    public abstract function setParent(AbstractPost $parent = null);
+    public abstract function setParent(?AbstractPost $parent = null): void;
 
     /**
      * Gets the Children.
@@ -598,7 +598,7 @@ abstract class AbstractPost
      *
      * @return AbstractPostMeta|null
      */
-    public function getMeta($key)
+    public function getMeta($key): ?AbstractPostMeta
     {
         foreach ($this->getMetas() as $meta) {
             if($meta->getKey() === $key) {
@@ -623,7 +623,7 @@ abstract class AbstractPost
      *
      * @param Collection|AbstractTaxonomy[] $taxonomies
      */
-    public abstract function setTaxonomies(Collection $taxonomies);
+    public abstract function setTaxonomies(Collection $taxonomies): void;
 
     /**
      * Gets the Taxonomies.

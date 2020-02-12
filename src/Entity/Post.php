@@ -28,11 +28,11 @@ class Post extends AbstractPost
     private $comments;
 
     /**
-     * @var User|null
+     * @var User
      *
      * @ORM\ManyToOne(targetEntity="User", inversedBy="posts")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="post_author", referencedColumnName="ID")
+     *   @ORM\JoinColumn(name="post_author", referencedColumnName="ID", nullable=false)
      * })
      */
     private $author;
@@ -87,7 +87,7 @@ class Post extends AbstractPost
     /**
      * {@inheritdoc}
      */
-    public function setComments(Collection $comments)
+    public function setComments(Collection $comments): void
     {
         $this->comments = $comments;
     }
@@ -95,7 +95,7 @@ class Post extends AbstractPost
     /**
      * {@inheritdoc}
      *
-     * @return Post|null
+     * @return User
      */
     public function getAuthor(): AbstractUser
     {
@@ -105,7 +105,7 @@ class Post extends AbstractPost
     /**
      * {@inheritdoc}
      */
-    public function setAuthor(AbstractUser $author)
+    public function setAuthor(AbstractUser $author): void
     {
         $this->author = $author;
     }
@@ -115,7 +115,7 @@ class Post extends AbstractPost
      *
      * @return Post|null
      */
-    public function getParent(): AbstractPost
+    public function getParent(): ?AbstractPost
     {
         return $this->parent;
     }
@@ -123,7 +123,7 @@ class Post extends AbstractPost
     /**
      * {@inheritdoc}
      */
-    public function setParent(AbstractPost $parent = null)
+    public function setParent(?AbstractPost $parent = null): void
     {
         $this->parent = $parent;
     }
@@ -168,7 +168,7 @@ class Post extends AbstractPost
     /**
      * {@inheritdoc}
      */
-    public function setTaxonomies(Collection $taxonomies)
+    public function setTaxonomies(Collection $taxonomies): void
     {
         $this->taxonomies = $taxonomies;
     }

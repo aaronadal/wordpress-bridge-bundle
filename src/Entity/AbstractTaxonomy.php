@@ -63,7 +63,7 @@ abstract class AbstractTaxonomy
      *
      * @param string $name
      */
-    public function setName(string $name)
+    public function setName(string $name): void
     {
         $this->name = $name;
     }
@@ -83,7 +83,7 @@ abstract class AbstractTaxonomy
      *
      * @param string $description
      */
-    public function setDescription(string $description)
+    public function setDescription(string $description): void
     {
         $this->description = $description;
     }
@@ -103,7 +103,7 @@ abstract class AbstractTaxonomy
      *
      * @param int $count
      */
-    public function setCount(int $count)
+    public function setCount(int $count): void
     {
         $this->count = $count;
     }
@@ -120,7 +120,7 @@ abstract class AbstractTaxonomy
      *
      * @param AbstractTaxonomy|null $parent
      */
-    public abstract function setParent(AbstractTaxonomy $parent = null);
+    public abstract function setParent(?AbstractTaxonomy $parent = null): void;
 
     /**
      * Gets the Children.
@@ -141,7 +141,7 @@ abstract class AbstractTaxonomy
      *
      * @param AbstractTerm $term
      */
-    public abstract function setTerm(AbstractTerm $term);
+    public abstract function setTerm(AbstractTerm $term): void;
 
     /**
      * Gets the Posts.
@@ -155,5 +155,5 @@ abstract class AbstractTaxonomy
      *
      * @param AbstractPost[]|Collection $posts
      */
-    public abstract function setPosts(Collection $posts);
+    public abstract function setPosts(Collection $posts): void;
 }

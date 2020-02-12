@@ -57,7 +57,7 @@ abstract class AbstractPostMeta
      *
      * @param string $key
      */
-    public function setKey(string $key)
+    public function setKey(string $key): void
     {
         $this->key = $key;
     }
@@ -77,7 +77,7 @@ abstract class AbstractPostMeta
      *
      * @param mixed $value
      */
-    public function setValue($value)
+    public function setValue($value): void
     {
         $this->value = $value;
     }
@@ -94,5 +94,5 @@ abstract class AbstractPostMeta
      *
      * @param AbstractPost $post
      */
-    public abstract function setPost(AbstractPost $post);
+    public abstract function setPost(AbstractPost $post): void;
 }

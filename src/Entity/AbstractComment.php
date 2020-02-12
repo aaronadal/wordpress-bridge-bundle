@@ -104,7 +104,7 @@ abstract class AbstractComment
      *
      * @param string $author
      */
-    public function setAuthor(string $author)
+    public function setAuthor(string $author): void
     {
         $this->author = $author;
     }
@@ -124,7 +124,7 @@ abstract class AbstractComment
      *
      * @param string $email
      */
-    public function setEmail(string $email)
+    public function setEmail(string $email): void
     {
         $this->email = $email;
     }
@@ -144,7 +144,7 @@ abstract class AbstractComment
      *
      * @param string $url
      */
-    public function setUrl(string $url)
+    public function setUrl(string $url): void
     {
         $this->url = $url;
     }
@@ -164,7 +164,7 @@ abstract class AbstractComment
      *
      * @param string $ip
      */
-    public function setIp(string $ip)
+    public function setIp(string $ip): void
     {
         $this->ip = $ip;
     }
@@ -184,7 +184,7 @@ abstract class AbstractComment
      *
      * @param DateTime $date
      */
-    public function setDate(DateTime $date)
+    public function setDate(DateTime $date): void
     {
         $this->date = $date;
     }
@@ -204,7 +204,7 @@ abstract class AbstractComment
      *
      * @param DateTime $dateGmt
      */
-    public function setDateGmt(DateTime $dateGmt)
+    public function setDateGmt(DateTime $dateGmt): void
     {
         $this->dateGmt = $dateGmt;
     }
@@ -224,7 +224,7 @@ abstract class AbstractComment
      *
      * @param string $content
      */
-    public function setContent(string $content)
+    public function setContent(string $content): void
     {
         $this->content = $content;
     }
@@ -244,7 +244,7 @@ abstract class AbstractComment
      *
      * @param int $karma
      */
-    public function setKarma(int $karma)
+    public function setKarma(int $karma): void
     {
         $this->karma = $karma;
     }
@@ -264,7 +264,7 @@ abstract class AbstractComment
      *
      * @param string $approved
      */
-    public function setApproved(string $approved)
+    public function setApproved(string $approved): void
     {
         $this->approved = $approved;
     }
@@ -284,7 +284,7 @@ abstract class AbstractComment
      *
      * @param string $agent
      */
-    public function setAgent(string $agent)
+    public function setAgent(string $agent): void
     {
         $this->agent = $agent;
     }
@@ -304,7 +304,7 @@ abstract class AbstractComment
      *
      * @param string $type
      */
-    public function setType(string $type)
+    public function setType(string $type): void
     {
         $this->type = $type;
     }
@@ -321,7 +321,7 @@ abstract class AbstractComment
      *
      * @param AbstractComment $parent
      */
-    public abstract function setParent(AbstractComment $parent);
+    public abstract function setParent(AbstractComment $parent): void;
 
     /**
      * @return Comment|null
@@ -340,7 +340,7 @@ abstract class AbstractComment
      *
      * @return AbstractCommentMeta|null
      */
-    public function getMeta($key)
+    public function getMeta($key): ?AbstractCommentMeta
     {
         foreach ($this->getMetas() as $meta) {
             if($meta->getKey() === $key) {
@@ -363,7 +363,7 @@ abstract class AbstractComment
      *
      * @param AbstractPost $post
      */
-    public abstract function setPost(AbstractPost $post);
+    public abstract function setPost(AbstractPost $post): void;
 
     /**
      * Gets the User.
@@ -375,7 +375,7 @@ abstract class AbstractComment
     /**
      * Sets the User.
      *
-     * @param AbstractUser $user
+     * @param AbstractUser|null $user
      */
-    public abstract function setUser(AbstractUser $user);
+    public abstract function setUser(?AbstractUser $user): void;
 }

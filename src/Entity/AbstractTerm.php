@@ -63,7 +63,7 @@ abstract class AbstractTerm
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName($name): void
     {
         $this->name = $name;
     }
@@ -93,7 +93,7 @@ abstract class AbstractTerm
      *
      * @param string $slug
      */
-    public function setSlug($slug)
+    public function setSlug($slug): void
     {
         $this->slug = $slug;
     }
@@ -113,7 +113,7 @@ abstract class AbstractTerm
      *
      * @param int $group
      */
-    public function setGroup($group)
+    public function setGroup($group): void
     {
         $this->group = $group;
     }
@@ -139,7 +139,7 @@ abstract class AbstractTerm
      *
      * @return AbstractTermMeta|null
      */
-    public function getMeta($key)
+    public function getMeta($key): ?AbstractTermMeta
     {
         foreach ($this->getMetas() as $meta) {
             if($meta->getKey() === $key) {

@@ -57,7 +57,7 @@ abstract class AbstractTermMeta
      *
      * @param string $key
      */
-    public function setKey(string $key)
+    public function setKey(string $key): void
     {
         $this->key = $key;
     }
@@ -77,7 +77,7 @@ abstract class AbstractTermMeta
      *
      * @param mixed $value
      */
-    public function setValue($value)
+    public function setValue($value): void
     {
         $this->value = $value;
     }

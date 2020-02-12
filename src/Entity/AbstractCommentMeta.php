@@ -57,7 +57,7 @@ abstract class AbstractCommentMeta
      *
      * @param string $key
      */
-    public function setKey(string $key)
+    public function setKey(string $key): void
     {
         $this->key = $key;
     }
@@ -77,7 +77,7 @@ abstract class AbstractCommentMeta
      *
      * @param mixed $value
      */
-    public function setValue($value)
+    public function setValue($value): void
     {
         $this->value = $value;
     }
@@ -94,5 +94,5 @@ abstract class AbstractCommentMeta
      *
      * @param AbstractComment $comment
      */
-    public abstract function setComment(AbstractComment $comment);
+    public abstract function setComment(AbstractComment $comment): void;
 }

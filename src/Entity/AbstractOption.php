@@ -62,7 +62,7 @@ abstract class AbstractOption
      *
      * @param string $key
      */
-    public function setKey(string $key)
+    public function setKey(string $key): void
     {
         $this->key = $key;
     }
@@ -82,7 +82,7 @@ abstract class AbstractOption
      *
      * @param mixed $value
      */
-    public function setValue($value)
+    public function setValue($value): void
     {
         $this->value = $value;
     }
@@ -102,7 +102,7 @@ abstract class AbstractOption
      *
      * @param bool $autoload
      */
-    public function setAutoload(bool $autoload)
+    public function setAutoload(bool $autoload): void
     {
         $this->autoload = $autoload;
     }

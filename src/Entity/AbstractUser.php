@@ -94,7 +94,7 @@ abstract class AbstractUser
      *
      * @param string $username
      */
-    public function setUsername(string $username)
+    public function setUsername(string $username): void
     {
         $this->username = $username;
     }
@@ -114,7 +114,7 @@ abstract class AbstractUser
      *
      * @param string $password
      */
-    public function setPassword(string $password)
+    public function setPassword(string $password): void
     {
         $this->password = $password;
     }
@@ -134,7 +134,7 @@ abstract class AbstractUser
      *
      * @param string $name
      */
-    public function setName(string $name)
+    public function setName(string $name): void
     {
         $this->name = $name;
     }
@@ -154,7 +154,7 @@ abstract class AbstractUser
      *
      * @param string $email
      */
-    public function setEmail(string $email)
+    public function setEmail(string $email): void
     {
         $this->email = $email;
     }
@@ -174,7 +174,7 @@ abstract class AbstractUser
      *
      * @param string $url
      */
-    public function setUrl(string $url)
+    public function setUrl(string $url): void
     {
         $this->url = $url;
     }
@@ -194,7 +194,7 @@ abstract class AbstractUser
      *
      * @param DateTime $registryDate
      */
-    public function setRegistryDate(DateTime $registryDate)
+    public function setRegistryDate(DateTime $registryDate): void
     {
         $this->registryDate = $registryDate;
     }
@@ -214,7 +214,7 @@ abstract class AbstractUser
      *
      * @param string $activationKey
      */
-    public function setActivationKey(string $activationKey)
+    public function setActivationKey(string $activationKey): void
     {
         $this->activationKey = $activationKey;
     }
@@ -234,7 +234,7 @@ abstract class AbstractUser
      *
      * @param int $status
      */
-    public function setStatus(int $status)
+    public function setStatus(int $status): void
     {
         $this->status = $status;
     }
@@ -254,7 +254,7 @@ abstract class AbstractUser
      *
      * @param string $displayName
      */
-    public function setDisplayName(string $displayName)
+    public function setDisplayName(string $displayName): void
     {
         $this->displayName = $displayName;
     }
@@ -264,21 +264,21 @@ abstract class AbstractUser
      *
      * @return AbstractPost[]|Collection
      */
-    public abstract function getPosts();
+    public abstract function getPosts(): Collection;
 
     /**
      * Gets the Comments.
      *
      * @return AbstractComment[]|Collection
      */
-    public abstract function getComments();
+    public abstract function getComments(): Collection;
 
     /**
      * Gets the Metas.
      *
      * @return AbstractUserMeta[]|Collection
      */
-    public abstract function getMetas();
+    public abstract function getMetas(): Collection;
 
     /**
      * Gets one Meta by key.
@@ -287,7 +287,7 @@ abstract class AbstractUser
      *
      * @return AbstractUserMeta|null
      */
-    public function getMeta($key)
+    public function getMeta($key): ?AbstractUserMeta
     {
         foreach ($this->getMetas() as $meta) {
             if($meta->getKey() === $key) {

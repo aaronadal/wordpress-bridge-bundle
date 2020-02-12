@@ -54,7 +54,7 @@ class Taxonomy extends AbstractTaxonomy
     /**
      * {@inheritdoc}
      */
-    public function setParent(AbstractTaxonomy $parent = null)
+    public function setParent(?AbstractTaxonomy $parent = null): void
     {
         $this->parent = $parent;
     }
@@ -78,7 +78,7 @@ class Taxonomy extends AbstractTaxonomy
     /**
      * {@inheritdoc}
      */
-    public function setTerm(AbstractTerm $term)
+    public function setTerm(AbstractTerm $term): void
     {
         $this->term = $term;
     }
@@ -94,7 +94,7 @@ class Taxonomy extends AbstractTaxonomy
     /**
      * {@inheritdoc}
      */
-    public function setPosts(Collection $posts)
+    public function setPosts(Collection $posts): void
     {
         $this->posts = $posts;
     }

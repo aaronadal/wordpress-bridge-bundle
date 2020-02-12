@@ -37,7 +37,7 @@ class PostMeta extends AbstractPostMeta
     /**
      * {@inheritdoc}
      */
-    public function setPost(AbstractPost $post)
+    public function setPost(AbstractPost $post): void
     {
         $this->post = $post;
     }

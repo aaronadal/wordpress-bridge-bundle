@@ -41,7 +41,7 @@ class UserMeta extends AbstractUserMeta
      *
      * @param AbstractUser $user
      */
-    public function setUser(AbstractUser $user)
+    public function setUser(AbstractUser $user): void
     {
         $this->user = $user;
     }

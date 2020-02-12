@@ -37,7 +37,7 @@ class CommentMeta extends AbstractCommentMeta
     /**
      * {@inheritdoc}
      */
-    public function setComment(AbstractComment $comment)
+    public function setComment(AbstractComment $comment): void
     {
         $this->comment = $comment;
     }

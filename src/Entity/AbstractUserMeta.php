@@ -57,7 +57,7 @@ abstract class AbstractUserMeta
      *
      * @param string $key
      */
-    public function setKey(string $key)
+    public function setKey(string $key): void
     {
         $this->key = $key;
     }
@@ -77,8 +77,22 @@ abstract class AbstractUserMeta
      *
      * @param mixed $value
      */
-    public function setValue($value)
+    public function setValue($value): void
     {
         $this->value = $value;
     }
+
+    /**
+     * Gets the User.
+     *
+     * @return AbstractUser
+     */
+    public abstract function getUser(): AbstractUser;
+
+    /**
+     * Sets the User.
+     *
+     * @param AbstractUser $user
+     */
+    public abstract function setUser(AbstractUser $user): void;
 }
