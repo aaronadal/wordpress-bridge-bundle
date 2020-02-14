@@ -3,7 +3,7 @@
 namespace Aaronadal\WordpressBridgeBundle\Entity;
 
 
-use DateTime;
+use DateTimeInterface;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
@@ -138,9 +138,9 @@ abstract class AbstractPost
     /**
      * Gets the Date.
      *
-     * @return DateTime
+     * @return DateTimeInterface
      */
-    public function getDate(): DateTime
+    public function getDate(): DateTimeInterface
     {
         return $this->date;
     }
@@ -148,9 +148,9 @@ abstract class AbstractPost
     /**
      * Sets the Date.
      *
-     * @param DateTime $date
+     * @param DateTimeInterface $date
      */
-    public function setDate(DateTime $date): void
+    public function setDate(DateTimeInterface $date): void
     {
         $this->date = $date;
     }
@@ -158,9 +158,9 @@ abstract class AbstractPost
     /**
      * Gets the DateGmt.
      *
-     * @return DateTime
+     * @return DateTimeInterface
      */
-    public function getDateGmt(): DateTime
+    public function getDateGmt(): DateTimeInterface
     {
         return $this->dateGmt;
     }
@@ -168,9 +168,9 @@ abstract class AbstractPost
     /**
      * Sets the DateGmt.
      *
-     * @param DateTime $dateGmt
+     * @param DateTimeInterface $dateGmt
      */
-    public function setDateGmt(DateTime $dateGmt): void
+    public function setDateGmt(DateTimeInterface $dateGmt): void
     {
         $this->dateGmt = $dateGmt;
     }
@@ -378,9 +378,9 @@ abstract class AbstractPost
     /**
      * Gets the ModifiedDate.
      *
-     * @return DateTime
+     * @return DateTimeInterface
      */
-    public function getModifiedDate(): DateTime
+    public function getModifiedDate(): DateTimeInterface
     {
         return $this->modifiedDate;
     }
@@ -388,9 +388,9 @@ abstract class AbstractPost
     /**
      * Sets the ModifiedDate.
      *
-     * @param DateTime $modifiedDate
+     * @param DateTimeInterface $modifiedDate
      */
-    public function setModifiedDate(DateTime $modifiedDate): void
+    public function setModifiedDate(DateTimeInterface $modifiedDate): void
     {
         $this->modifiedDate = $modifiedDate;
     }
@@ -398,9 +398,9 @@ abstract class AbstractPost
     /**
      * Gets the ModifiedDateGmt.
      *
-     * @return DateTime
+     * @return DateTimeInterface
      */
-    public function getModifiedDateGmt(): DateTime
+    public function getModifiedDateGmt(): DateTimeInterface
     {
         return $this->modifiedDateGmt;
     }
@@ -408,9 +408,9 @@ abstract class AbstractPost
     /**
      * Sets the ModifiedDateGmt.
      *
-     * @param DateTime $modifiedDateGmt
+     * @param DateTimeInterface $modifiedDateGmt
      */
-    public function setModifiedDateGmt(DateTime $modifiedDateGmt): void
+    public function setModifiedDateGmt(DateTimeInterface $modifiedDateGmt): void
     {
         $this->modifiedDateGmt = $modifiedDateGmt;
     }

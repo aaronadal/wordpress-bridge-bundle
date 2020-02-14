@@ -3,7 +3,7 @@
 namespace Aaronadal\WordpressBridgeBundle\Entity;
 
 
-use DateTime;
+use DateTimeInterface;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -182,9 +182,9 @@ abstract class AbstractUser
     /**
      * Gets the RegistryDate.
      *
-     * @return DateTime
+     * @return DateTimeInterface
      */
-    public function getRegistryDate(): DateTime
+    public function getRegistryDate(): DateTimeInterface
     {
         return $this->registryDate;
     }
@@ -192,9 +192,9 @@ abstract class AbstractUser
     /**
      * Sets the RegistryDate.
      *
-     * @param DateTime $registryDate
+     * @param DateTimeInterface $registryDate
      */
-    public function setRegistryDate(DateTime $registryDate): void
+    public function setRegistryDate(DateTimeInterface $registryDate): void
     {
         $this->registryDate = $registryDate;
     }

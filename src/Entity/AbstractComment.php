@@ -3,7 +3,7 @@
 namespace Aaronadal\WordpressBridgeBundle\Entity;
 
 
-use DateTime;
+use DateTimeInterface;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -172,9 +172,9 @@ abstract class AbstractComment
     /**
      * Gets the Date.
      *
-     * @return DateTime
+     * @return DateTimeInterface
      */
-    public function getDate(): DateTime
+    public function getDate(): DateTimeInterface
     {
         return $this->date;
     }
@@ -182,9 +182,9 @@ abstract class AbstractComment
     /**
      * Sets the Date.
      *
-     * @param DateTime $date
+     * @param DateTimeInterface $date
      */
-    public function setDate(DateTime $date): void
+    public function setDate(DateTimeInterface $date): void
     {
         $this->date = $date;
     }
@@ -192,9 +192,9 @@ abstract class AbstractComment
     /**
      * Gets the DateGmt.
      *
-     * @return DateTime
+     * @return DateTimeInterface
      */
-    public function getDateGmt(): DateTime
+    public function getDateGmt(): DateTimeInterface
     {
         return $this->dateGmt;
     }
@@ -202,9 +202,9 @@ abstract class AbstractComment
     /**
      * Sets the DateGmt.
      *
-     * @param DateTime $dateGmt
+     * @param DateTimeInterface $dateGmt
      */
-    public function setDateGmt(DateTime $dateGmt): void
+    public function setDateGmt(DateTimeInterface $dateGmt): void
     {
         $this->dateGmt = $dateGmt;
     }
