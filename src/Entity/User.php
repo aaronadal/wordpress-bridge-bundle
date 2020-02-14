@@ -4,6 +4,7 @@ namespace Aaronadal\WordpressBridgeBundle\Entity;
 
 
 use Aaronadal\WordpressBridgeBundle\Persistence\Annotation\WordpressTable;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -33,6 +34,15 @@ class User extends AbstractUser
      * @ORM\OneToMany(targetEntity="Aaronadal\WordpressBridgeBundle\Entity\UserMeta", mappedBy="user", indexBy="key", cascade={"all"})
      */
     private $metas;
+
+    public function __construct(int $id = null)
+    {
+        parent::__construct($id);
+
+        $this->posts = new ArrayCollection();
+        $this->comments = new ArrayCollection();
+        $this->metas = new ArrayCollection();
+    }
 
     /**
      * {@inheritdoc}

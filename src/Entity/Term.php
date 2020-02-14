@@ -4,6 +4,7 @@ namespace Aaronadal\WordpressBridgeBundle\Entity;
 
 
 use Aaronadal\WordpressBridgeBundle\Persistence\Annotation\WordpressTable;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -28,6 +29,13 @@ class Term extends AbstractTerm
      * @ORM\OneToMany(targetEntity="TermMeta", mappedBy="term", indexBy="key", cascade={"all"})
      */
     private $metas;
+
+    public function __construct(int $id = null)
+    {
+        parent::__construct($id);
+
+        $this->metas = new ArrayCollection();
+    }
 
     /**
      * {@inheritdoc}

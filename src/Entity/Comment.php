@@ -4,6 +4,7 @@ namespace Aaronadal\WordpressBridgeBundle\Entity;
 
 
 use Aaronadal\WordpressBridgeBundle\Persistence\Annotation\WordpressTable;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -20,15 +21,15 @@ class Comment extends AbstractComment
 {
 
     /**
-     * @ORM\OneToOne(targetEntity="Comment", inversedBy="child")
+     * @ORM\ManyToOne(targetEntity="Comment", inversedBy="child")
      * @ORM\JoinColumn(name="comment_parent", referencedColumnName="comment_ID")
      */
     private $parent;
 
     /**
-     * @ORM\OneToOne(targetEntity="Comment", mappedBy="parent")
+     * @ORM\OneToMany(targetEntity="Comment", mappedBy="parent")
      */
-    private $child;
+    private $children;
 
     /**
      * @ORM\OneToMany(targetEntity="CommentMeta", mappedBy="comment", indexBy="key")
@@ -51,20 +52,12 @@ class Comment extends AbstractComment
      */
     private $user;
 
-    /**
-     * {@inheritdoc}
-     */
-    public function getChild(): ?Comment
+    public function __construct(int $id = null)
     {
-        return $this->child;
-    }
+        parent::__construct($id);
 
-    /**
-     * {@inheritdoc}
-     */
-    public function getMetas(): Collection
-    {
-        return $this->metas;
+        $this->metas = new ArrayCollection();
+        $this->children = new ArrayCollection();
     }
 
     /**
@@ -81,6 +74,22 @@ class Comment extends AbstractComment
     public function setParent(AbstractComment $parent): void
     {
         $this->parent = $parent;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getChildren(): Collection
+    {
+        return $this->children;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getMetas(): Collection
+    {
+        return $this->metas;
     }
 
     /**

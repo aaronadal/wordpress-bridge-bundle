@@ -32,6 +32,11 @@ abstract class AbstractCommentMeta
      */
     private $value;
 
+    public function __construct(int $id = null)
+    {
+        $this->id = $id;
+    }
+
     /**
      * Gets the Id.
      *

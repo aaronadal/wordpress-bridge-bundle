@@ -79,6 +79,11 @@ abstract class AbstractComment
      */
     private $type = '';
 
+    public function __construct(int $id = null)
+    {
+        $this->id = $id;
+    }
+
     /**
      * Gets the Id.
      *
@@ -324,9 +329,9 @@ abstract class AbstractComment
     public abstract function setParent(AbstractComment $parent): void;
 
     /**
-     * @return Comment|null
+     * @return Collection|AbstractComment[]
      */
-    public abstract function getChild(): ?Comment;
+    public abstract function getChildren(): Collection;
 
     /**
      * @return Collection|AbstractCommentMeta[]

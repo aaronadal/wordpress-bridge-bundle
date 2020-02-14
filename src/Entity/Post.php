@@ -74,6 +74,15 @@ class Post extends AbstractPost
      */
     private $taxonomies;
 
+    public function __construct(int $id = null)
+    {
+        parent::__construct($id);
+
+        $this->comments   = new ArrayCollection();
+        $this->children   = new ArrayCollection();
+        $this->taxonomies = new ArrayCollection();
+    }
+
     /**
      * {@inheritdoc}
      *
@@ -156,8 +165,8 @@ class Post extends AbstractPost
     public function getTaxonomies(?string $taxonomy = null): Collection
     {
         $collection = new ArrayCollection();
-        foreach($this->taxonomies as $key => $tax) {
-            if($tax->getName() === $taxonomy) {
+        foreach ($this->taxonomies as $key => $tax) {
+            if ($tax->getName() === $taxonomy) {
                 $collection[$key] = $tax;
             }
         }

@@ -125,6 +125,11 @@ abstract class AbstractPost
      */
     private $commentCount = 0;
 
+    public function __construct(int $id = null)
+    {
+        $this->id = $id;
+    }
+
     /**
      * Gets the Id.
      *

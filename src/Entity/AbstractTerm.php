@@ -38,6 +38,11 @@ abstract class AbstractTerm
      */
     private $group = 0;
 
+    public function __construct(int $id = null)
+    {
+        $this->id = $id;
+    }
+
     /**
      * Gets the Id.
      *

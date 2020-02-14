@@ -4,6 +4,7 @@ namespace Aaronadal\WordpressBridgeBundle\Entity;
 
 
 use Aaronadal\WordpressBridgeBundle\Persistence\Annotation\WordpressTable;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -42,6 +43,13 @@ class Taxonomy extends AbstractTaxonomy
      * @ORM\ManyToMany(targetEntity="Post", mappedBy="taxonomies")
      */
     private $posts;
+
+    public function __construct(int $id = null)
+    {
+        parent::__construct($id);
+
+        $this->children = new ArrayCollection();
+    }
 
     /**
      * {@inheritdoc}
