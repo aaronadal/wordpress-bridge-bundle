@@ -149,12 +149,28 @@ class Post extends AbstractPost
 
     /**
      * {@inheritdoc}
+     */
+    public function setChildren(Collection $children): void
+    {
+        $this->children = $children;
+    }
+
+    /**
+     * {@inheritdoc}
      *
      * @return Collection|PostMeta[]
      */
     public function getMetas(): Collection
     {
         return $this->metas;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setMetas(Collection $metas): void
+    {
+        $this->metas = $metas;
     }
 
     /**

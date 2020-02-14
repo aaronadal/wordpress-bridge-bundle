@@ -48,8 +48,24 @@ class Term extends AbstractTerm
     /**
      * {@inheritdoc}
      */
+    public function setTaxonomy(AbstractTaxonomy $taxonomy): void
+    {
+        $this->taxonomy = $taxonomy;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function getMetas(): Collection
     {
         return $this->metas;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setMetas(Collection $metas): void
+    {
+        $this->metas = $metas;
     }
 }

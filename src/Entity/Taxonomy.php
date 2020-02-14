@@ -78,6 +78,14 @@ class Taxonomy extends AbstractTaxonomy
     /**
      * {@inheritdoc}
      */
+    public function setChildren(Collection $children): void
+    {
+        $this->children = $children;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function getTerm(): AbstractTerm
     {
         return $this->term;

@@ -135,6 +135,13 @@ abstract class AbstractTaxonomy
     public abstract function getChildren(): Collection;
 
     /**
+     * Sets the Children.
+     *
+     * @param AbstractTaxonomy[]|Collection $children
+     */
+    public abstract function setChildren(Collection $children): void;
+
+    /**
      * Gets the Term.
      *
      * @return AbstractTerm

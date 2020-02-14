@@ -87,9 +87,25 @@ class Comment extends AbstractComment
     /**
      * {@inheritdoc}
      */
+    public function setChildren(Collection $children): void
+    {
+        $this->children = $children;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function getMetas(): Collection
     {
         return $this->metas;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setMetas(Collection $metas): void
+    {
+        $this->metas = $metas;
     }
 
     /**

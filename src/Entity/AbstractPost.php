@@ -590,11 +590,25 @@ abstract class AbstractPost
     public abstract function getChildren(): Collection;
 
     /**
+     * Sets the Children.
+     *
+     * @param Collection|AbstractPost[] $children
+     */
+    public abstract function setChildren(Collection $children): void;
+
+    /**
      * Gets the Metas.
      *
      * @return Collection|AbstractPostMeta[]
      */
     public abstract function getMetas(): Collection;
+
+    /**
+     * Sets the Metas.
+     *
+     * @param Collection|AbstractPostMeta[] $metas
+     */
+    public abstract function setMetas(Collection $metas): void;
 
     /**
      * Gets one Meta by key.

@@ -272,6 +272,13 @@ abstract class AbstractUser
     public abstract function getPosts(): Collection;
 
     /**
+     * Sets the Posts.
+     *
+     * @param AbstractPost[]|Collection $posts
+     */
+    public abstract function setPosts(Collection $posts): void;
+
+    /**
      * Gets the Comments.
      *
      * @return AbstractComment[]|Collection
@@ -279,11 +286,25 @@ abstract class AbstractUser
     public abstract function getComments(): Collection;
 
     /**
+     * Sets the Comments.
+     *
+     * @param AbstractComment[]|Collection $comments
+     */
+    public abstract function setComments(Collection $comments): void;
+
+    /**
      * Gets the Metas.
      *
      * @return AbstractUserMeta[]|Collection
      */
     public abstract function getMetas(): Collection;
+
+    /**
+     * Sets the Metas.
+     *
+     * @param AbstractUserMeta[]|Collection $metas
+     */
+    public abstract function setMetas(Collection $metas): void;
 
     /**
      * Gets one Meta by key.

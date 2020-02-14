@@ -53,6 +53,14 @@ class User extends AbstractUser
     }
 
     /**
+     * {@inheritDoc}
+     */
+    public function setPosts(Collection $posts): void
+    {
+        $this->posts = $posts;
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function getComments(): Collection
@@ -61,10 +69,26 @@ class User extends AbstractUser
     }
 
     /**
+     * {@inheritDoc}
+     */
+    public function setComments(Collection $comments): void
+    {
+        $this->comments = $comments;
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function getMetas(): Collection
     {
         return $this->metas;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setMetas(Collection $metas): void
+    {
+        $this->metas = $metas;
     }
 }

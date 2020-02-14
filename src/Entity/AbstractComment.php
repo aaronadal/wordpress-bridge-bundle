@@ -329,14 +329,32 @@ abstract class AbstractComment
     public abstract function setParent(AbstractComment $parent): void;
 
     /**
+     * Gets the Children.
+     *
      * @return Collection|AbstractComment[]
      */
     public abstract function getChildren(): Collection;
 
     /**
+     * Sets the Children.
+     *
+     * @param Collection|AbstractComment[] $children
+     */
+    public abstract function setChildren(Collection $children): void;
+
+    /**
+     * Gets the Metas.
+     *
      * @return Collection|AbstractCommentMeta[]
      */
     public abstract function getMetas(): Collection;
+
+    /**
+     * Sets the Metas.
+     *
+     * @param Collection|AbstractCommentMeta[] $metas
+     */
+    public abstract function setMetas(Collection $metas): void;
 
     /**
      * Gets one Meta by key.

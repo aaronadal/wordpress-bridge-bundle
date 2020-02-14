@@ -131,11 +131,25 @@ abstract class AbstractTerm
     public abstract function getTaxonomy(): AbstractTaxonomy;
 
     /**
+     * Sets the Taxonomy.
+     *
+     * @param AbstractTaxonomy $taxonomy
+     */
+    public abstract function setTaxonomy(AbstractTaxonomy $taxonomy): void;
+
+    /**
      * Gets the TermMetas.
      *
      * @return Collection|AbstractTermMeta[]
      */
     public abstract function getMetas(): Collection;
+
+    /**
+     * Sets the Metas.
+     *
+     * @param Collection|AbstractTermMeta[] $metas
+     */
+    public abstract function setMetas(Collection $metas): void;
 
     /**
      * Gets one Meta by key.
