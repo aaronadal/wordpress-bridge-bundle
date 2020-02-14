@@ -21,7 +21,7 @@ class Comment extends AbstractComment
 {
 
     /**
-     * @ORM\ManyToOne(targetEntity="Comment", inversedBy="child")
+     * @ORM\ManyToOne(targetEntity="Comment", inversedBy="children")
      * @ORM\JoinColumn(name="comment_parent", referencedColumnName="comment_ID")
      */
     private $parent;
