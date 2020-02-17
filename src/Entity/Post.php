@@ -182,7 +182,7 @@ class Post extends AbstractPost
     {
         $collection = new ArrayCollection();
         foreach ($this->taxonomies as $key => $tax) {
-            if ($tax->getName() === $taxonomy) {
+            if ($taxonomy === null || $tax->getName() === $taxonomy) {
                 $collection[$key] = $tax;
             }
         }
