@@ -80,6 +80,7 @@ class Post extends AbstractPost
 
         $this->comments   = new ArrayCollection();
         $this->children   = new ArrayCollection();
+        $this->metas      = new ArrayCollection();
         $this->taxonomies = new ArrayCollection();
     }
 
