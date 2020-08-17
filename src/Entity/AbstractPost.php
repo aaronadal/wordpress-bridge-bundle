@@ -649,7 +649,7 @@ abstract class AbstractPost
      *
      * @param string|null $taxonomy If not null, returns only the Terms with Taxonomy which matches this parameter.
      *
-     * @return Collection|AbstractTaxonomy[]
+     * @return Collection|AbstractTerm[]
      */
     public function getTerms(?string $taxonomy = null): Collection
     {
